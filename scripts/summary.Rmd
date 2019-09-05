@@ -1,0 +1,23 @@
+---
+title: "Summary"
+output: html_document
+---
+Simple math latex
+
+$\sqrt{27} = 100$
+$\lim_{x\to\infty}$
+
+Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel. Ut facilisis massa euismod ex faucibus efficitur. Nam id volutpat velit. Proin ultricies augue et odio auctor tempus. Nullam mauris erat, laoreet at mauris ac, mollis tristique nisl. Morbi quis odio posuere, efficitur ex ac, fringilla mi. 
+
+
+## Quisque in dictum sem
+
+Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel. Ut facilisis massa euismod ex faucibus efficitur. Nam id volutpat velit. Proin ultricies augue et odio auctor tempus. Nullam mauris erat, laoreet at mauris ac, mollis tristique nisl. Morbi quis odio posuere, efficitur ex ac, fringilla mi.
+Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. 
+
+Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel.Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel.
+
+
+## Lorem Ipsum
+
+Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. 

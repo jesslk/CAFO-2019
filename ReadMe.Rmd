@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+author: "Jessica Kueon"
+date: "July 18, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## CAFO Shiny 2019
+
+The purpose of the document is to explain dynamic/interactive part of the Shiny app.
+
+
+
+### Dynamic parts
+
+
+
+
+
+
+### Non-Dynamic parts
+
+
+2nd SelectInput of Metafor Forest plot 
+
+Timeline of the studies
+
+New Categories 
+
+Risk of Bias Revman
