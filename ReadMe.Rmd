@@ -18,8 +18,7 @@ The purpose of the document is to explain dynamic/interactive part of the Shiny 
 ### Dynamic parts
 
 
-
-
+Will be added
 
 
 ### Non-Dynamic parts
