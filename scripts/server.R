@@ -27,7 +27,7 @@ shinyServer(function(output, input, session)({
   
   ## First descriptive RMD  
 output$descriptive <- renderUI({
-  HTML(markdown::markdownToHTML(knit("../scripts/gettingstarted.Rmd", quiet = TRUE)))
+  HTML(markdown::markdownToHTML(knit("../scripts/descriptive.Rmd", quiet = TRUE)))
   
   
 })
