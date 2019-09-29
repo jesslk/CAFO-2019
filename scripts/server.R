@@ -35,17 +35,25 @@ output$descriptive <- renderUI({
 ## Leaflet map w/ customized tiles 
 
 output$map <- renderLeaflet({
-  cafo <- readxl::read_xlsx("../datasets/cafo.xlsx", sheet = "Treatment-Outcome data")%>% select(Refid, `Author(s)`, Year, Country, State, City, lng, lat, Title, `Journal Name`)
-  
-  leaflet(data=cafo) %>%  addProviderTiles(providers$Stamen.TonerLite,
+  cafo <- readxl::read_xlsx("../datasets/cafo.xlsx", sheet = "Treatment-Outcome data")
+ ## Create location data 
+   cafo <- cafo %>% mutate(Country = ifelse(Refid == 648 | Refid == 690 | Refid == 743|Refid == 288, "Germany",
+                                           ifelse(Refid == 81 | Refid == 203, "Netherlands", "United States"))
+                          )
+   cafo <- cafo %>% mutate(`State` = ifelse(Refid == 64 | Refid == 690 | Refid == 743 | Refid == 288, NA,
+                                                     ifelse(Refid == 81 | Refid == 203, NA, "North Carolina")))
+   cafo <- cafo %>% mutate(long = ifelse(Country == "Germany", 13.404954,
+                                        ifelse(Country == "Netherlands", 4.899431, -78.644257)))
+   cafo <- cafo %>% mutate(lat = ifelse(Country == "Germany", 52.520008,
+                                        ifelse(Country == "Netherlands", 52.379189, 35.787743)))
+   cafoo <- distinct(cafo, Refid, .keep_all = TRUE)
+   cafoo <- cafoo %>% group_by(Country, long, lat) %>% summarise(`Number of Studies` = n())
+   leaflet(data=cafoo) %>%  addProviderTiles(providers$Stamen.TonerLite,
                                            options = providerTileOptions(noWrap = TRUE)
   ) %>%  setView(-40.679728, 34.738366, zoom = 2) %>%  ## Set/fix the view of the map 
-    addMarkers(lng = ~lng,
-               lat = ~lat, popup = paste("Author(s):", cafo$`Author(s)`, "<br>",
-                                         "Refid:", cafo$Refid, "<br>",
-                                         "Year:", cafo$Year, "<br>",
-                                         "Country:", cafo$Country, "<br>",
-                                         "Journal:", cafo$`Journal Name`))})
+     addCircleMarkers(lng = cafoo$long, lat = cafoo$lat,radius = log(cafoo$`Number of Studies`)*8, popup = ~paste("Country:", cafoo$Country, "<br>",
+                                                                          
+                                                                          "Number of Studies:", cafoo$`Number of Studies`) )})
 ## Country bar plot
 
 output$bar <- renderPlot({
