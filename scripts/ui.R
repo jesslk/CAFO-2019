@@ -9,7 +9,8 @@ library(knitr)
 
 shinyUI(navbarPage("Updated Systematic Review on CAFO Data",
                    tabPanel("Getting Started",
-                            fluidRow(column(12, includeMarkdown("gettingstarted.Rmd")))),
+                            fluidRow(column(12, includeMarkdown("gettingstarted.Rmd")))
+                            ),
                    tabPanel("Descriptive Plots",
                             fluidRow(column(12, uiOutput("descriptive"))),
                             splitLayout(cellWidths = c("40%", "40%"), leafletOutput("map", width = "85%"), plotOutput("bar", width = "95%", height = "430px")),

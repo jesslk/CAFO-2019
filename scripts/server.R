@@ -27,7 +27,7 @@ shinyServer(function(output, input, session)({
   
   ## First descriptive RMD  
 output$descriptive <- renderUI({
-  HTML(markdown::markdownToHTML(knit("C:/Users/Jessica Lee K/Desktop/ISU Stat/Summer 2019/CC/Research/CAFO/CAFO_Shiny2019/scripts/descriptive.Rmd", quiet = TRUE)))
+  HTML(markdown::markdownToHTML(knit("../scripts/gettingstarted.Rmd", quiet = TRUE)))
   
   
 })
@@ -35,7 +35,8 @@ output$descriptive <- renderUI({
 ## Leaflet map w/ customized tiles 
 
 output$map <- renderLeaflet({
-  cafo <- readxl::read_xlsx("C:/Users/Jessica Lee K/Desktop/ISU Stat/Summer 2019/CC/Research/CAFO/CAFO_Shiny2019/cafo2.xlsx") %>% select(Refid, `Author(s)`, Year, Country, State, City, lng, lat, Title, `Journal Name`)
+  cafo <- readxl::read_xlsx("../datasets/cafo.xlsx", sheet = "Treatment-Outcome data")%>% select(Refid, `Author(s)`, Year, Country, State, City, lng, lat, Title, `Journal Name`)
+  
   leaflet(data=cafo) %>%  addProviderTiles(providers$Stamen.TonerLite,
                                            options = providerTileOptions(noWrap = TRUE)
   ) %>%  setView(-40.679728, 34.738366, zoom = 2) %>%  ## Set/fix the view of the map 
@@ -48,7 +49,7 @@ output$map <- renderLeaflet({
 ## Country bar plot
 
 output$bar <- renderPlot({
-  cafo <- readxl::read_xlsx("C:/Users/Jessica Lee K/Desktop/ISU Stat/Summer 2019/CC/Research/CAFO/CAFO_Shiny2019/cafo2.xlsx") %>% select(Refid, `Author(s)`, Year, Country, State, City, lng, lat, Title, `Journal Name`)
+  cafo <- readxl::read_xlsx("../datasets/cafo2.xlsx") %>% select(Refid, `Author(s)`, Year, Country, State, City, lng, lat, Title, `Journal Name`)
   unique(cafo) %>% ggplot(aes(x = Country)) + geom_bar(aes(fill = Country)) + geom_text(stat = "count", aes(label = ..count..), vjust = -1) ## Display number of counts
 })
 
@@ -652,16 +653,17 @@ output$exprimetROBPlot <- renderPlot({
 output$bias <- renderPlot({
   library(ggplot2)
   library(tidyr)
-  rob <- read_xlsx("C:/Users/Jessica Lee K/Desktop/ISU Stat/Spring 2918/Stat 585/CAFO-Systematic-Review-Shiny/rob.xlsx")
+  rob <- read_xlsx("../datasets/cafo.xlsx", sheet = "Risk of bias")
   rob <- as.data.frame(rob)
   
   ## Risk of Bias RavMan Table
   
-  r2 <- rob %>% select(Refid, confounding, selection, measurement_of_expo, missing_data, measurement_of_outcome, selection_of_report, overall)
-  r22 <- r2 %>% gather(key = `Type of Bias`, value = Bias, confounding:overall)
+  r2 <- rob %>% select(Refid, ROB_confounding_paige, ROB_selection_paige, ROB_measurementExposure_paige, ROB_missingData_paige, ROB_measureOutcome_paige,ROB_SelectionofReportedResult_paige, ROB_overall_paige)
+  names(r2) <- c("Refid", "Confounding", "Selection", "Measurement of Exposure", "Missing Data", "Measurement of Outcome", "Selection of Report", "Overall")
+  r22 <- r2 %>% gather(key = `Type of Bias`, value = Bias, Confounding:Overall)
   r22$Bias <- as.factor(r22$Bias)
   r22$Bias <- factor(r22$Bias, levels = c("Critical","Serious", "Moderate", "Low", "Uncertain"))
-  r22$`Type of Bias` <- factor(r22$`Type of Bias`, levels = c("selection_of_report", "selection", "missing_data", "measurement_of_outcome", "measurement_of_expo", "confounding", "overall"))
+  r22$`Type of Bias` <- factor(r22$`Type of Bias`, levels = c("Selection of Report", "Selection", "Missing Data", "Measurement of Outcome", "Measurement of Exposure", "Confounding", "Overall"))
   color_table <- tibble(
     Bias = c("Critical","Serious", "Moderate", "Low", "Uncertain"),
     Color = c("firebrick2", "darkorange","yellow", "green2", "floralwhite")
