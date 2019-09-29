@@ -683,7 +683,7 @@ output$bias <- renderPlot({
 
 ## Reference page
 output$references <- renderUI({
-  HTML(markdown::markdownToHTML(knit("C:/Users/Jessica Lee K/Desktop/ISU Stat/Summer 2019/CC/Research/CAFO/CAFO_Shiny2019/scripts/references.Rmd", quiet = TRUE)))
+  HTML(markdown::markdownToHTML(knit("../scripts/references.Rmd", quiet = TRUE)))
   
   
 })
