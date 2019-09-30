@@ -2,22 +2,24 @@
 title: "Summary"
 output: html_document
 ---
-Simple math latex
 
-$\sqrt{27} = 100$
-$\lim_{x\to\infty}$
+# Conclusions
 
-Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel. Ut facilisis massa euismod ex faucibus efficitur. Nam id volutpat velit. Proin ultricies augue et odio auctor tempus. Nullam mauris erat, laoreet at mauris ac, mollis tristique nisl. Morbi quis odio posuere, efficitur ex ac, fringilla mi. 
+This review revealed that there is sufficient evidence to
+conclude that communities living in proximity to goat
+production are at increased risk of Q fever. The association
+between MRSA colonization and proximity is unclear,
+mainly due to a lack of replication. The conclusions
+about associations with other outcomes, especially those
+related to upper and lower respiratory disease, are unchanged
+from the prior review: “There was inconsistent
+evidence of a weak association between self-reported disease
+in people with allergies or familial history of allergies.
+No consistent dose response relationship between exposure
+and disease was observable.” If questions about the
+health effects of living near animal production continue to
+be of interest, then large, long-term prospective studies
+will be required, especially if non-specific clinical symptoms
+are the outcomes of interest.
 
 
-## Quisque in dictum sem
-
-Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel. Ut facilisis massa euismod ex faucibus efficitur. Nam id volutpat velit. Proin ultricies augue et odio auctor tempus. Nullam mauris erat, laoreet at mauris ac, mollis tristique nisl. Morbi quis odio posuere, efficitur ex ac, fringilla mi.
-Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. 
-
-Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel.Quisque in dictum sem, non mattis quam. Nunc tempor enim ante, ut aliquet justo pretium vel.
-
-
-## Lorem Ipsum
-
-Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. Curabitur in ante ornare, tincidunt purus non, ornare turpis. Integer nec consequat sapien. Vivamus ut eros nec ligula sollicitudin porta et at nisl. Suspendisse lacinia consectetur consequat. Nam in feugiat quam, rhoncus interdum urna. Etiam ultricies suscipit elit, nec vulputate tortor fermentum sed. Sed at pulvinar lectus. 
