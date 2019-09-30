@@ -27,9 +27,7 @@ shinyUI(navbarPage("Updated Systematic Review on CAFO Data",
                                      column(4,
                                             selectInput("Outcome",
                                                         "Outcome",
-                                                        choices = " ", selected = " ")),
-                                     column(5, img(src="https://raw.githubusercontent.com/jesslk/Stat-585-Lab-1/master/label.jpg",  width="160%",
-                                                   height="120%" ))),
+                                                        choices = " ", selected = " "))),
                             plotOutput("metafor", width = "70%", height = "800px")
                             
 
