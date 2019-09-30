@@ -6,10 +6,12 @@ library(shinythemes)
 library(knitr)
 
 ## Shiny Interface and Layout 
-
-shinyUI(navbarPage("Updated Systematic Review on CAFO Data",
+## Added style.css to remove horizontal scrolling
+shinyUI(
+  navbarPage("Updated Systematic Review on CAFO Data",
                    tabPanel("Getting Started",
-                            fluidRow(column(12, includeMarkdown("gettingstarted.Rmd")))
+                            includeCSS('style.css'),
+                            fluidRow(style='width:1100px;', column(12, style='width:1100px;', includeMarkdown("gettingstarted.Rmd")))
                             ),
                    tabPanel("Descriptive Plots",
                             fluidRow(column(12, uiOutput("descriptive"))),
