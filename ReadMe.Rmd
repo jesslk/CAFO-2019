@@ -14,12 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 The purpose of the document is to explain dynamic/interactive part of the Shiny app.
 
 
-
 ### Dynamic parts
 
 
-
-
+Will be added ddd
 
 
 ### Non-Dynamic parts
